@@ -2,10 +2,16 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 def home(request):
     return render(request, 'authentication/index.html')
+
+def base(request):
+    return render(request, 'base.html')
+
+def about(request):
+    return render(request, 'about.html')
 
 def signup(request):
 
@@ -40,13 +46,15 @@ def signin(request):
         if user is not None:
             login(request, user)
             fname = user.first_name
-            return render(request, "autentication/index.html", {'fname': fname})
+            return render(request, "authentication/index.html", {'fname': fname})
         
         else:
             messages.error(request, "Bad Credentials")
-            return redirect('home')
+            return redirect('signpage')
 
     return render(request, 'authentication/signin.html')
 
 def signout(request):
-    pass
+    logout(request)
+    messages.success(request, "Logged Out Successfully!")
+    return redirect('home')
