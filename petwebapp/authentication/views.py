@@ -10,9 +10,6 @@ def home(request):
 def base(request):
     return render(request, 'base.html')
 
-def about(request):
-    return render(request, 'about.html')
-
 def signup(request):
 
     if request.method == "POST":
