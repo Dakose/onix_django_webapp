@@ -4,7 +4,7 @@ from . import views
 from services.views import HomeView
 
 urlpatterns = [
-    path('', views.authentication_page, name="authentication_page"),
+    path('authentication_page', views.authentication_page, name="authentication_page"),
     path('home', HomeView.as_view(), name="home"),
     path('signup', views.signup, name="signup"),
     path('signin', views.signin, name="signin"),
