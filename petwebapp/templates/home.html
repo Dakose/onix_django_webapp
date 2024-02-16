@@ -1,12 +1,7 @@
+{% extends 'base.html' %}
+{% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProvidingServices</title>
-</head>
-<body>
+{% block home %}
     <h1>UserService</h1>
     <ul>
     {% for services in object_list %}
@@ -14,8 +9,9 @@
         <li>{{ services.phone }}</li>
         <li>{{ services.text }}</li>
         <li>{{ services.image }}</li>
-        <li>{{ services.dt }}</li>
+        <li>{{ services.dt }}</li></br>
+        </br>
     {% endfor %}
     </ul>
-</body>
-</html>
+
+{% endblock %}

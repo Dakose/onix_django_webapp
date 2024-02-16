@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>ProvidingServices</title>
-    </head>
-    <body>
+{% extends 'base.html' %}
+{% load static %}
 
+{% block authentication_page %}
         {% for message in messages %}
         <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
         <strong>Message:</strong> {{ message }}
@@ -30,5 +25,5 @@
         <button type="submit"><a href="home">Website</a></button>
         {% endif %}
         <script src="" async defer></script>
-    </body>
-</html>
+
+{% endblock %}
