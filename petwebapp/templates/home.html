@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProvidingServices</title>
+</head>
+<body>
+    <h1>UserService</h1>
+    <ul>
+    {% for services in object_list %}
+        <li>{{ services.title }} - {{ services.author }}</li>
+        <li>{{ services.phone }}</li>
+        <li>{{ services.text }}</li>
+        <li>{{ services.image }}</li>
+        <li>{{ services.dt }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

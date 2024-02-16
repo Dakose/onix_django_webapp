@@ -1,11 +1,16 @@
 from django.shortcuts import render, redirect
+from django.views.generic import ListView, DetailView
+from services.models import UserService
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
-def home(request):
+def authentication_page(request):
     return render(request, 'authentication/index.html')
+
+# def home(request):
+#     return render(request, 'home.html')
 
 def base(request):
     return render(request, 'base.html')
@@ -54,4 +59,8 @@ def signin(request):
 def signout(request):
     logout(request)
     messages.success(request, "Logged Out Successfully!")
-    return redirect('home')
+    return redirect('authentication_page')
+
+# class HomeView(ListView):
+#     model = UserService
+#     template_name = 'home.html'
