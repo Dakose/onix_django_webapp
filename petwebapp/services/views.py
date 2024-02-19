@@ -8,3 +8,7 @@ from .models import UserService
 class HomeView(ListView):
     model = UserService
     template_name = 'home.html'
+
+class ArticleDetailView(DetailView):
+    model = UserService
+    template_name = 'article_details.html'

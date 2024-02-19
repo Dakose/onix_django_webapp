@@ -5,11 +5,12 @@
     <h1>UserService</h1>
     <ul>
     {% for services in object_list %}
-        <li>{{ services.title }} - {{ services.author }}</li>
-        <li>{{ services.phone }}</li>
-        <li>{{ services.text }}</li>
-        <li>{{ services.image }}</li>
-        <li>{{ services.dt }}</li></br>
+        <li>{{ services.title }} - {{ services.author.first_name }}
+            {{ services.author.last_name }}</br>
+        phone: {{ services.phone }} - email: {{ services.author.email }}</br>
+        {{ services.text }}</br>
+        {{ services.image }}</br>
+        {{ services.dt }}</li></br>
         </br>
     {% endfor %}
     </ul>
