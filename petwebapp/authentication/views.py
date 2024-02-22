@@ -8,8 +8,6 @@ from django.contrib.auth import authenticate, login, logout
 def authentication_page(request):
     return render(request, 'authentication/index.html')
 
-# def home(request):
-#     return render(request, 'home.html')
 
 def base(request):
     return render(request, 'base.html')
