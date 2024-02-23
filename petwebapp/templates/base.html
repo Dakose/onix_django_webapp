@@ -10,14 +10,10 @@
 <body>
     <nav class="navbar">
         <div class="container">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav font-600 font-up font-sm">
                     <a class="nav-link" href="home">Services</a>
-                    <a class="nav-link" href="">About</a>
+                    <a class="nav-link" href="about">About</a>
                     <a class="nav-link" href="authentication_page">Sign Up</a>
                 </div>
             </div>
@@ -32,5 +28,9 @@
 
     {% endblock %}
 
+    {% block about %}
+
+    {% endblock %}
+    
 </body>
 </html>
