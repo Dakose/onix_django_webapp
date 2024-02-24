@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block title %}Profile{% endblock %}
+
 {% block authentication_page %}
     <h1>My Profile</h1>
         {% for message in messages %}
@@ -21,9 +23,9 @@
         <button type="submit"><a href="home">Website</a></button>
         
         {% else %}
-        <button type="submit"><a href="/signup">SignUp</a></button>
-        <button type="submit"><a href="/signin">SignIn</a></button>
-        <button type="submit"><a href="home">Website</a></button>
+        <a href="/signup" class="btn btn-outline-success">SignUp</a>
+        <a href="/signin" class="btn btn-success">SignIn</a>
+        <a href="home" class="btn btn-secondary">Website</a>
         {% endif %}
         <script src="" async defer></script>
 
