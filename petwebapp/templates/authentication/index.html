@@ -4,7 +4,9 @@
 {% block title %}Profile{% endblock %}
 
 {% block authentication_page %}
+<div class="container">
     <h1>My Profile</h1>
+    <br/>
         {% for message in messages %}
         <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
         <strong>Message:</strong> {{ message }}
@@ -15,18 +17,18 @@
         {% endfor %}
 
         <h1>Welcome to ProvidingServices website</h1>
-
+        <br/>
         {% if user.is_authenticated %}
         <h3>Hello {{ fname }}</h3>
         <h4>You`re successfully logged in.</h4>
-        <button type="submit"><a href="/signout">SignOut</a></button>
-        <button type="submit"><a href="home">Website</a></button>
+        <a href="/signout" class="btn btn-outline-danger">Sign Out</a>
+        <a href="home" class="btn btn-secondary">Website</a>
         
         {% else %}
-        <a href="/signup" class="btn btn-outline-success">SignUp</a>
-        <a href="/signin" class="btn btn-success">SignIn</a>
+        <a href="/signup" class="btn btn-outline-success">Sign Up</a>
+        <a href="/signin" class="btn btn-success">Sign In</a>
         <a href="home" class="btn btn-secondary">Website</a>
         {% endif %}
         <script src="" async defer></script>
-
+</div>
 {% endblock %}

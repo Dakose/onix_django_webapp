@@ -3,9 +3,10 @@
 
 {% block home %}
     <h1>User Services</h1>
+    <br/>
     <ul>
     {% for services in object_list %}
-        <li><a href="{% url 'article-detail' services.pk %}">{{ services.title }}</a>  - {{ services.author.first_name }}
+        <li><a href="{% url 'article-details' services.pk %}">{{ services.title }}</a>  - {{ services.author.first_name }}
             {{ services.author.last_name }}</br>
         phone: {{ services.phone }} - email: {{ services.author.email }}</br>
         {{ services.text }}</br>
