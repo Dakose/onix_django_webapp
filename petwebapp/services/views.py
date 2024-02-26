@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, UpdateView
 from .models import UserService
 
 class HomeView(ListView):
@@ -15,3 +15,8 @@ class AddServiceView(CreateView):
     model = UserService
     fields = '__all__'
     template_name = 'add_service.html'
+
+class UpdateServiceView(UpdateView):
+    model = UserService
+    fields = '__all__'
+    template_name = 'update_service.html'
