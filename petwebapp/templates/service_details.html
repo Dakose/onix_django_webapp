@@ -1,0 +1,19 @@
+{% extends 'home.html' %}
+{% load static %}
+
+{% block title %}{{ services.title }}{% endblock %}
+
+{% block home %}
+    <h1>{{ service.title }}</h1></br>
+    <h3>Phone: {{ service.phone }} | Email: {{ service.author.email }}</h3></br>
+    <small>{{ service.author.first_name }} {{ service.author.last_name }}</small></br>
+    <small>{{ service.dt }}</small></br>
+    <hr>
+    </br>
+    <h2>{{ service.text }}</h2></br>
+    <h2>{{ service.image }}</h2></br>
+    
+<br/><br/>
+
+<a href="{% url 'home' %}" class="btn btn-secondary">BACK</a>
+{% endblock %}

@@ -6,13 +6,14 @@
     <br/>
     <ul>
     {% for services in object_list %}
-        <li><a href="{% url 'article-details' services.pk %}">{{ services.title }}</a>  - {{ services.author.first_name }}
+        <li><a href="{% url 'service_details' services.pk %}">{{ services.title }}</a>  - {{ services.author.first_name }}
             {{ services.author.last_name }}</br>
-        phone: {{ services.phone }} - email: {{ services.author.email }}</br>
-        {{ services.text }}</br>
-        {{ services.image }}</br>
         {{ services.dt }}</li></br>
         </br>
+    {% empty %}
+        <br/><br/>
+        <small>Sorry</small><br/>
+        <small>No services yet...</small>
     {% endfor %}
     </ul>
 

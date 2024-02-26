@@ -10,16 +10,13 @@
         {% for message in messages %}
         <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
         <strong>Message:</strong> {{ message }}
-        <button type="button" class="close"  data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
         </button>
         </div>
         {% endfor %}
-
-        <h1>Welcome to ProvidingServices website</h1>
         <br/>
         {% if user.is_authenticated %}
-        <h3>Hello {{ fname }}</h3>
+        <h3>Hello {{ fname }}!</h3>
         <h4>You`re successfully logged in.</h4>
         <a href="/signout" class="btn btn-outline-danger">Sign Out</a>
         <a href="home" class="btn btn-secondary">Website</a>
