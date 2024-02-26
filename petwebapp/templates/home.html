@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block home %}
+{% block content %}
     <h1>User Services</h1>
     <br/>
     <ul>
     {% for services in object_list %}
         <li><a href="{% url 'service_details' services.pk %}">{{ services.title }}</a>  - {{ services.author.first_name }}
             {{ services.author.last_name }}</br>
-        {{ services.dt }}</li></br>
+            <small>{{ services.title_tag }}</small><br/>
+        <small>{{ services.dt }}</small></li></br>
         </br>
     {% empty %}
         <br/><br/>

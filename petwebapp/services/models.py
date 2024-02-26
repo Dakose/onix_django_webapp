@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-  
+from django.urls import reverse
 
 class UserService(models.Model):
     dt = models.DateTimeField(auto_now=True)
@@ -9,11 +9,14 @@ class UserService(models.Model):
     phone = models.CharField(max_length=255, verbose_name="Phone:")
     title = models.CharField(max_length=255, verbose_name="Service title:")
     text = models.TextField()
-    image = models.ImageField(upload_to="serviceimg/")
-    title_tag = models.CharField(max_length=255, verbose_name="Title tag:")
+    image = models.ImageField(upload_to="serviceimg/", null=True, blank=True, default=None, verbose_name="Image:")
+    title_tag = models.CharField(max_length=255, verbose_name="Title tag:", default="Other")
 
     def __str__(self):
         return self.title + ' | ' + str(self.author)
+    
+    def get_absolute_url(self):
+        return reverse('home')
     
     class Meta:
         verbose_name = "User Service"

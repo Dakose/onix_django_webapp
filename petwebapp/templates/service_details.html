@@ -1,11 +1,13 @@
 {% extends 'home.html' %}
 {% load static %}
 
-{% block title %}{{ services.title }}{% endblock %}
+{% block title %}{{ service.title }}{% endblock %}
 
-{% block home %}
-    <h1>{{ service.title }}</h1></br>
-    <h3>Phone: {{ service.phone }} | Email: {{ service.author.email }}</h3></br>
+{% block content %}
+    <h1>{{ service.title }}</h1>
+    <small>{{ service.title_tag }}</small>
+    <br/><br/>
+    <h3>Phone: {{ service.phone }} | Email: {{ service.author.email }}</h3>
     <small>{{ service.author.first_name }} {{ service.author.last_name }}</small></br>
     <small>{{ service.dt }}</small></br>
     <hr>
