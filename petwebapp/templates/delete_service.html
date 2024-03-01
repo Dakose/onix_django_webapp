@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Delete Service{% endblock %}
+
+
+{% block content %}
+    <h1>Delete Service</h1>
+    <br/><br/>
+    <h3>Delete: {{ service.title }}</h3>
+    <table>
+    <form method="POST">
+        {% csrf_token %}
+        <strong>Are you sure?!</strong>
+    </table>
+    <button class="btn btn-danger">Delete service!</button>
+    </form>
+{% endblock %}

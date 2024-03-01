@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView, CreateView, UpdateView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from .models import UserService
+from django.urls import reverse_lazy
 
 class HomeView(ListView):
     model = UserService
@@ -20,3 +21,8 @@ class UpdateServiceView(UpdateView):
     model = UserService
     fields = '__all__'
     template_name = 'update_service.html'
+
+class DeleteServiceView(DeleteView):
+    model = UserService
+    template_name = 'delete_service.html'
+    success_url = reverse_lazy('home')
