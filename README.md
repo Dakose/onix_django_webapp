@@ -7,4 +7,5 @@
 #add add_service page, wher u add u`r service
 #add detail (where u watch all details for service (user name, phone, email, texts and images))
 #add update service (where u edit service and post changes)
+#add delete service (where u deleted u service post)
 #add basic bootstrap
