@@ -22,17 +22,22 @@
               <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'add_service' %}">Add Service</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="{% url 'about' %}">About</a>
             </li>
           </ul>
+          <li class="nav-item dropdown">
+            <a class="btn btn-success" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Profile
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'authentication_page' %}">My Profile</a></li>
+              <li><a class="dropdown-item" href="#">My Services</a></li>
+              <li><a class="dropdown-item" href="{% url 'add_service' %}">Add Service</a></li>
+            </ul>
+          </li>
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
-            <a class="btn btn-success" type="submit" href="#">MyServices</a>
-            <a class="btn btn-light" type="submit" href="{% url 'authentication_page' %}">Profile</a>
           </form>
         </div>
       </div>
