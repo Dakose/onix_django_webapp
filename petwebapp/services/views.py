@@ -6,6 +6,7 @@ from django.urls import reverse_lazy
 class HomeView(ListView):
     model = UserService
     template_name = 'home.html'
+    # ordering = ['-id']
 
     
 def service_detail(request, pk):
