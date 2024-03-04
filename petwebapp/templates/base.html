@@ -19,10 +19,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+              <small><a class="nav-link active" aria-current="page" href="{% url 'home' %}">Services</a></small>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'about' %}">About</a>
+              <small><a class="nav-link" href="{% url 'about' %}">About</a></small>
             </li>
           </ul>
           <div>
@@ -32,8 +32,10 @@
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="{% url 'authentication_page' %}">My Profile</a></li>
+                {% if user.is_authenticated %}
                 <li><a class="dropdown-item" href="#">My Services</a></li>
                 <li><a class="dropdown-item" href="{% url 'add_service' %}">Add Service</a></li>
+                {% endif %}
               </ul>
             </li>
           </div>

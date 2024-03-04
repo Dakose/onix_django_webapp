@@ -3,6 +3,7 @@
 
 
 {% block content %}
+{% if user.is_authenticated %}
     <h1>Add Service</h1>
     <table>
     <form method="POST">
@@ -10,5 +11,5 @@
         {{ form.as_table }}
     </table>
     <button class="btn btn-success">Add</button>
-
+{% endif %}
 {% endblock %}
