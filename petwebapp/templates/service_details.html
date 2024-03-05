@@ -4,8 +4,8 @@
 {% block title %}{{ service.title }}{% endblock %}
 
 {% block content %}
+    <h2>Category: {{ service.category }}</h2>
     <h1>{{ service.title }}</h1>
-    <small>{{ service.title_tag }}</small>
     <br/><br/>
     <h3>Phone: {{ service.phone }} | Email: {{ service.author.email }}</h3>
     <small>{{ service.author.first_name }} {{ service.author.last_name }}</small></br>

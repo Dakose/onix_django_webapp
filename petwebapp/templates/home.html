@@ -8,7 +8,7 @@
     {% for services in object_list %}
         <li><a href="{% url 'service_details' services.pk %}">{{ services.title }}</a>  - {{ services.author.first_name }}
             {{ services.author.last_name }}</br>
-            <small>{{ services.title_tag }}</small><br/>
+            <small>{{ services.category }}</small><br/>
         <small>{{ services.dt }}</small></li></br>
         </br>
     {% empty %}
