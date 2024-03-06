@@ -13,7 +13,10 @@ class HomeView(ListView):
 def service_detail(request, pk):
     service = get_object_or_404(UserService, pk=pk)
     total_likes = service.total_likes()
-    return render(request, 'service_details.html', {'service': service, 'total_likes': total_likes})
+    liked = False
+    if service.likes.filter(id=request.user.id).exists():
+        liked = True
+    return render(request, 'service_details.html', {'service': service, 'total_likes': total_likes, 'liked': liked})
 
 class AddServiceView(CreateView):
     model = UserService
@@ -32,5 +35,11 @@ class DeleteServiceView(DeleteView):
 
 def LikeView(request, pk):
     service = get_object_or_404(UserService, id=request.POST.get('service_id'))
-    service.likes.add(request.user)
+    liked = False
+    if service.likes.filter(id=request.user.id).exists():
+        service.likes.remove(request.user)
+        liked = False
+    else:
+        service.likes.add(request.user)
+        liked = True
     return HttpResponseRedirect(reverse('service_details', args=[str(pk)]))

@@ -18,7 +18,15 @@
 <br/><br/>
 <form action="{% url 'like_service' service.pk%}" method="POST">
     {% csrf_token %}
-    <button type="submit", name="service_id", value="{{ service.id }}", class="btn btn-primary btn-sm">Like</button> - {{ total_likes }} Likes
+
+    {% if liked %}
+    <button type="submit", name="service_id", value="{{ service.id }}",
+     class="btn btn-danger btn-sm">Unlike</button>
+    {% else %}
+    <button type="submit", name="service_id", value="{{ service.id }}",
+     class="btn btn-primary btn-sm">Like</button>
+    {% endif %}
+     - {{ total_likes }} Likes
 </form>
 
 <a href="{% url 'home' %}" class="btn btn-secondary">BACK</a>

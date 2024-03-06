@@ -9,7 +9,8 @@
         <li><a href="{% url 'service_details' services.pk %}">{{ services.title }}</a>  - {{ services.author.first_name }}
             {{ services.author.last_name }}</br>
             <small>{{ services.category }}</small><br/>
-        <small>{{ services.dt }}</small></li></br>
+        <small>{{ services.dt }}</small><br/>
+        <small>likes: {{ services.total_likes }}</small></li></br>
         </br>
     {% empty %}
         <br/><br/>
