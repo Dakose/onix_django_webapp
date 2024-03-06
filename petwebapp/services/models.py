@@ -21,6 +21,10 @@ class UserService(models.Model):
     image = models.ImageField(upload_to="serviceimg/", null=True, blank=True, default=None, verbose_name="Image:")
     title_tag = models.CharField(max_length=255, verbose_name="Title tag:", default="Other")
     category = models.ForeignKey(Category, on_delete=models.PROTECT, null=True, blank=True, verbose_name="Category:", default="Other")
+    likes = models.ManyToManyField(User, related_name="services_posts")
+
+    def total_likes(self):
+        return self.likes.count()
 
     def __str__(self):
         return self.title + ' | ' + str(self.author)

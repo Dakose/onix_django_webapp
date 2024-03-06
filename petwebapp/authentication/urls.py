@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from . import views
-from services.views import HomeView, service_detail, AddServiceView, UpdateServiceView, DeleteServiceView
+from services.views import HomeView, service_detail, AddServiceView, UpdateServiceView, DeleteServiceView, LikeView
 from about.views import about
 
 urlpatterns = [
@@ -15,4 +15,5 @@ urlpatterns = [
     path('add_service/', AddServiceView.as_view(), name="add_service"),
     path('service/edit<int:pk>/', UpdateServiceView.as_view(), name="update_service"),
     path('service/edit<int:pk>/delete', DeleteServiceView.as_view(), name="delete_service"),
+    path('like/<int:pk>', LikeView, name="like_service"),
 ]
