@@ -8,4 +8,6 @@
 #add detail (where u watch all details for service (user name, phone, email, texts and images))
 #add update service (where u edit service and post changes)
 #add delete service (where u deleted u service post)
+#add like and unlike services
+#add category services
 #add basic bootstrap
