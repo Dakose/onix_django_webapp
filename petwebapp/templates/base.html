@@ -33,6 +33,7 @@
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="{% url 'authentication_page' %}">My Profile</a></li>
                 {% if user.is_authenticated %}
+                <li><a class="dropdown-item" href="{% url 'edit_profile' %}">Edit profile</a></li>
                 <li><a class="dropdown-item" href="#">My Services</a></li>
                 <li><a class="dropdown-item" href="{% url 'add_service' %}">Add Service</a></li>
                 {% endif %}

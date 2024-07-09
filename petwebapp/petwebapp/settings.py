@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'ckeditor',
     'about',
     'authentication',
     'services',
@@ -110,11 +111,7 @@ LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
-DATE_INPUT_FORMATS =  ['%d/%m/%Y']
-
 USE_I18N = True
-
-USE_L10N = True
 
 USE_TZ = True
 
@@ -126,10 +123,10 @@ STATICFILES_DIRS = [
     BASE_DIR / "petwebapp/static/",
 ]
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-MEDIA_URL = 'media/'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGIN_REDIRECT_URL = 'home'

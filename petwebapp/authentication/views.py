@@ -4,6 +4,9 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.views import generic
+from django.urls import reverse_lazy
+from django.contrib.auth.forms import UserChangeForm
 
 def authentication_page(request):
     return render(request, 'authentication/index.html')
@@ -33,6 +36,11 @@ def signup(request):
         return redirect('signin')
 
     return render(request, 'authentication/signup.html')
+
+class UserEditView(generic.CreateView):
+    form_class = UserChangeForm
+    tamplate_name = 'authentication/edit_profile.html'
+    success_url = reverse_lazy('home')
 
 def signin(request):
 
