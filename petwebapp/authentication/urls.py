@@ -2,11 +2,12 @@ from django.contrib import admin
 from django.urls import path, include
 from . import views
 from services.views import HomeView, service_detail, AddServiceView, UpdateServiceView, DeleteServiceView, LikeView
+from authentication.views import useredit
 from about.views import about
 
 urlpatterns = [
     path('authentication_page', views.authentication_page, name="authentication_page"),
-    path('edit_profile', views.useredit(), name='edit_profile'),
+    path('edit_profile', views.useredit, name='editprofile'),
     path('', HomeView.as_view()),
     path('home', HomeView.as_view(), name="home"),
     path('about', about, name="about"),
