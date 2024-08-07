@@ -41,23 +41,6 @@ def useredit(request):
     form_class = UserChangeForm
     tamplate_name = 'authentication/edit_profile.html'
     success_url = reverse_lazy('home')
-    # if request.method == "POST":
-    #     username = request.POST['username']
-    #     fname = request.POST['fname']
-    #     lname = request.POST['lname']
-    #     email = request.POST['email']
-    #     pass1 = request.POST['pass1']
-    #     pass2 = request.POST['pass2']
-
-    #     myuser = User.objects.create_user(username, email, pass1)
-    #     myuser.first_name = fname
-    #     myuser.last_name = lname
-
-    #     myuser.save()
-
-    #     messages.success(request, "Your Account has been successful updated.")
-
-    #     return redirect('home')
 
     return render(request, 'authentication/edit_profile.html')
 
